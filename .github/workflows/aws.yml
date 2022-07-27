@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.USER }}
           server: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}  # default is 22
-          ssh_private_key: ${{ secrets.KEY }}
+          ssh_private_key: ${{ secrets.EC2_SSH_KEY }}
           # will put all file under this path
           local_path: ./* # default is ./*
           # files will copy to under remote_path
@@ -35,7 +35,7 @@ jobs:
           HOST: ${{ secrets.HOST }}                              # Remote server address / ip - Required: true
           PORT: ${{ secrets.PORT }}  # default is 22                             # Remote server port -  Default: 22 - Required: false
           USER: ${{ secrets.USER }}                              # Remote server user - Required: true
-          PRIVATE_SSH_KEY: ${{ secrets.KEY }}       # Private ssh key registered on the remote server - Required: true
+          PRIVATE_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}       # Private ssh key registered on the remote server - Required: true
           COMMAND: |
                ls
                whoami
