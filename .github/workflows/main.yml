@@ -19,6 +19,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - run: ls
     
 
 #       - name: SFTP Deploy
@@ -38,15 +39,15 @@ jobs:
 #           # sftp args
 #           args: '-o ConnectTimeout=5'
 
-      - name: ssh server
-        uses: actions/checkout@v2  #D3rHase/ssh-command-action@v0.2
-        with:
-          HOST: ${{ secrets.HOST_DNS }}                              # Remote server address / ip - Required: true
-          PORT: ${{ secrets.PORT }}  # default is 22                             # Remote server port -  Default: 22 - Required: false
-          USER: ${{ secrets.USERNAME }}                              # Remote server user - Required: true
-          PRIVATE_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}       # Private ssh key registered on the remote server - Required: true
-          COMMAND: |
-               ls
-               whoami
-               ps -aufx
+#       - name: ssh server
+#         uses: actions/checkout@v2  #D3rHase/ssh-command-action@v0.2
+#         with:
+#           HOST: ${{ secrets.HOST_DNS }}                              # Remote server address / ip - Required: true
+#           PORT: ${{ secrets.PORT }}  # default is 22                             # Remote server port -  Default: 22 - Required: false
+#           USER: ${{ secrets.USERNAME }}                              # Remote server user - Required: true
+#           PRIVATE_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}       # Private ssh key registered on the remote server - Required: true
+#           COMMAND: |
+#                ls
+#                whoami
+#                ps -aufx
                
