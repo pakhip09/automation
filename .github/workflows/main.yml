@@ -16,19 +16,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-#       - name: SFTP Deploy
-#         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
-#         with:
-#           username: ${{ secrets.USERNAME }} 
-#           server: ${{ secrets.HOST_DNS }} 
-#           port: ${{ secrets.PORT }}  # default is 22
-#           ssh_private_key: ${{ secrets.EC2_SSH_KEY }} 
-#           # will put all file under this path
-#           local_path: ./* # default is ./*
-#           # files will copy to under remote_path
-#           remote_path: /home/ubuntu/repo
-#           # sftp args
-#           args: '-o ConnectTimeout=5'
+      - name: SFTP Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
+        with:
+          username: ${{ secrets.USERNAME }} 
+          server: ${{ secrets.HOST_DNS }} 
+          port: ${{ secrets.PORT }}  # default is 22
+          ssh_private_key: ${{ secrets.EC2_SSH_KEY }} 
+          # will put all file under this path
+          local_path: ./* # default is ./*
+          # files will copy to under remote_path
+          remote_path: /home/ubuntu/repo
+          # sftp args
+          args: '-o ConnectTimeout=5'
       - name: ssh server
         uses: actions/checkout@v2
         with:
