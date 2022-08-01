@@ -12,7 +12,7 @@ on:
 jobs:
   # This workflow contains a single job called "SFTP"
   deploy-via-sftp:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
