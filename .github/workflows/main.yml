@@ -30,7 +30,7 @@ jobs:
 #           # sftp args
 #           args: '-o ConnectTimeout=5'
       - name: ssh server
-        uses: D3rHase/ssh-command-action@v0.2
+        uses: actions/checkout@v2
         with:
           HOST: ${{ secrets.HOST_DNS }}                              # Remote server address / ip - Required: true
           PORT: ${{ secrets.PORT }}  # default is 22                             # Remote server port -  Default: 22 - Required: false
