@@ -19,6 +19,8 @@ jobs:
       - run: ls
       - run: w
       
+      - name: Install umi
+        run: yarn global add umi  
       - name: Install Dependencies
         run: yarn
       - name: Build
