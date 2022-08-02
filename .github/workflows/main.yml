@@ -18,6 +18,11 @@ jobs:
       - uses: actions/checkout@v2
       - run: ls
       - run: w
+      
+      - name: Install Dependencies
+        run: yarn
+      - name: Build
+        run: yarn build
           
           
       
